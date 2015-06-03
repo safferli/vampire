@@ -23,20 +23,50 @@ with conn:
 
 #%%
 
+# list of vampires
 # (8): ID, nickname, firstnames, lastname, clan, covenant, bloodline, misc
 vamps = [
     # PCs are single-digit (hopefully...)
     (1, None, "Hauke", "Hinnrichs", "Nosferatu", "Ordo Dracul", None, None),
     (2, None, "Valeria", "von Vyborg", "Ventrue", "Invictus", None, None),
     (3, "Capt'n Ahab", "Sven", "Unterberg", "Mekhet", "Ordo Dracul", None, None),
-    (4, "Thomas", "Thomas", "Du Bois", "Gangrel", None, None, None),
+    (4, "Fred", "Thomas", "Du Bois", "Gangrel", None, None, None),
     (5, None, None, None, None, None, None, None),
     (6, None, None, None, None, None, None, None),
     (7, None, None, None, None, None, None, None),
     (8, None, None, None, None, None, None, None),
     (9, None, None, None, None, None, None, None),
     # NPCs start here, IDs are auto-incremented
-    (None, None, "Werner", "Rosenberg", "Daeva", "Ordo Dracul", None, None)
+    (None, None, "Lucretia", None, "Mekhet", "Ordo Dracul", None, None),
+    (None, None, "Nicolaus", None, None, "Ordo Dracul", None, None),
+    (None, None, "Werner", "Rosenberg", "Daeva", "Ordo Dracul", None, None),
+    (None, None, "Sebastian", "Radlov", "Gangrel", "Kartianer", None, None), 
+    (None, None, "Baron Otto", "von Ulrich", None, "Ordo Dracul", None, None), 
+    (None, None, "Stephen", "Welsh", "Mekhet", "Ordo Dracul", None, None), 
+    (None, None, "Mara", None, None, "Ordo Dracul", None, None), 
+    (None, "Uhrmacher", None, None, None, "Ordo Dracul", None, None), 
+    (None, None, "Henri", None, None, "Invictus", None, None), 
+    (None, None, "Elise", None, None, None, None, None),
+    (None, "Donut", "Freddy", None, None, None, None, None),
+    (None, "Mutter Ey", None, None, "Daeva", None, None, None),
+    (None, "Wolfi", None, None, "Gangrel", None, None, None),
+    (None, "Biene", None, None, "Gangrel", None, None, None),
+    (None, None, "Alois", "Reynard", "Invictus", None, None, None),
+    (None, "Ratte", None, None, "Gangrel", "Invictus", None, None),
+    (None, None, None, "Matsumoto", "Nosferatu", None, "Kufukuji", None),
+    (None, "Architekt", "Hektor", None, None, None, None, None),
+    (None, "Der Philosoph", None, None, None, "Ordo Dracul", None, None),
+    (None, None, "Asmodius", "Schneider", None, "Ordo Dracul", None, None), 
+    (None, None, "Markus", "Sommerfeld", None, None, None, None),
+    (None, None, "Artur", "Braunberg", None, "Kartianer", None, None),
+    (None, None, "Noach", None, "Nosferatu", None, None, None),
+    (None, None, "Dr Frederik", "Austein", None, None, None, None), 
+    (None, None, "Hamish", None, None, "Invictus", None, None),
+    (None, None, "Amalia", "Ziller", None, "Invictus", None, None),
+    (None, None, "Anja", None, None, "Lancea Sancta", None, None),
+    (None, None, "Maria", "Malgrab", "Daeva", None, None, None),
+    (None, None, "Adrian", "von Langenfelden", None, None, None, None)
+    #(None, None, "", "", "", None, None, None)
     ]
 
 # generate vampire db
@@ -45,6 +75,8 @@ with conn:
     cur.execute("DROP TABLE IF EXISTS Vampires")
     cur.execute("CREATE TABLE Vampires(Id INTEGER PRIMARY KEY, Nickname TEXT, Firstname TEXT, Lastname TEXT, Clan TEXT, Covenant  TEXT, Bloodline TEXT, Misc TEXT)")
     cur.executemany("INSERT INTO Vampires VALUES(?, ?, ?, ?, ?, ?, ?, ?)", vamps)    
+
+#%%
     
 # examine db
 with conn:
@@ -53,6 +85,6 @@ with conn:
     rows = cur.fetchall()
     for row in rows:
         print(row)
-
+    
 # http://www.pythoncentral.io/introduction-to-sqlite-in-python/
 # http://zetcode.com/db/sqlitepythontutorial/ (python2)

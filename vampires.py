@@ -22,6 +22,7 @@ vamps = [
     (None, "Uhrmacher", None, None, None, "Ordo Dracul", None, None),
     (None, "Henri", None, None, "Daeva", "Invictus", None, None),
     (None, None, "Elise", None, None, None, None, None),
+    # 20:
     (None, "Donut", "Freddy", None, None, None, None, None),
     (None, "Mutter Ey", None, None, "Daeva", None, None, None),
     (None, "Wolfi", None, None, "Gangrel", None, None, None),
@@ -32,6 +33,7 @@ vamps = [
     (None, "Architekt", "Hektor", None, None, "Ordo Dracul", None, None),
     (None, "Der Philosoph", None, None, None, "Ordo Dracul", None, None),# Kogaion
     (None, None, "Asmodius", "Schneider", None, "Ordo Dracul", None, None),
+    # 30:
     (None, None, "Markus", "Sommerfeld", "Ventrue", "Kartianer", None, None),
     (None, None, "Artur", "Braunberg", "Daeva", "Kartianer", None, None),
     (None, None, "Noach", None, "Nosferatu", None, None, None),
@@ -42,7 +44,12 @@ vamps = [
     (None, None, "Maria", "Malgrab", "Daeva", None, None, None),
     (None, None, "Adrian", "von Langenfelden", None, "Kartianer", None, None),
     (None, None, None, "Weitenau", None, None, None, None),
+    # 40:
     (None, None, None, "Brauner", None, None, None, None),
-    (None, "Vampir von Düsseldorf", "Peter", "Kürten", None, None, None, None)
+    (None, "Vampir von Düsseldorf", "Peter", "Kürten", None, None, None, None),
+    (None, None, None, "Petrovski", "Nosferatu", "Invictus", None, None),
+    (None, None, "Melanie", None, "Daeva", None, None, None),
+    (None, None, "Matieu", None, None, "Zirkel der Mutter", None, None, None),
+    (None, None, "Leela", None, None, "Zirkel der Mutter", None, None, None)
     #(None, None, "", "", "", None, None, None)
     ]

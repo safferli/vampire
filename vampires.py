@@ -49,7 +49,7 @@ vamps = [
     (None, "Vampir von Düsseldorf", "Peter", "Kürten", None, None, None, None),
     (None, None, None, "Petrovski", "Nosferatu", "Invictus", None, None),
     (None, None, "Melanie", None, "Daeva", None, None, None),
-    (None, None, "Matieu", None, None, "Zirkel der Mutter", None, None, None),
-    (None, None, "Leela", None, None, "Zirkel der Mutter", None, None, None)
+    (None, None, "Matieu", None, None, "Zirkel der Mutter", None, None),
+    (None, None, "Leela", None, None, "Zirkel der Mutter", None, None)
     #(None, None, "", "", "", None, None, None)
     ]

@@ -7,7 +7,8 @@ import os
 
 #%%
 os.getcwd()
-os.chdir("D:\\github\\vampire")
+#os.chdir("D:\\github\\vampire")
+os.chdir("/home/csafferling/Documents/github/vampire")
 
 conn = lite.connect("vampires_dus.db")
 

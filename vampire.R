@@ -16,8 +16,9 @@ wd <- path.expand("~/Documents/github/vampire")
 setwd(wd)
 
 # list all sheets, which include "Vampire"
-gs_ls("Vampire")
+#gs_ls("Vampire")
 
+# https://docs.google.com/spreadsheets/d/1Gruo1DnElwTIAs42l-jK5JH5ckT_lKWR3goFx4W6XIs/pubhtml
 # register the "Vampire Düsseldorf" sheet
 gd <- gs_key("1Gruo1DnElwTIAs42l-jK5JH5ckT_lKWR3goFx4W6XIs")
 
@@ -27,3 +28,16 @@ gs_ws_ls(gd)
 # pull data
 vampires <- gs_read(gd, ws = "vampires", range = cell_cols(1:8))
 connections <- gs_read(gd, ws = "connections")
+
+
+# clans
+vampires %>% 
+  ggplot()+
+  geom_bar(aes(x=Clan, fill=Covenant))
+
+# covenants
+vampires %>% 
+  ggplot()+
+  geom_bar(aes(x=Covenant, fill=Clan))
+
+

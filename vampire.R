@@ -41,3 +41,15 @@ vampires %>%
   geom_bar(aes(x=Covenant, fill=Clan))
 
 
+
+### network analysis
+
+library(networkD3)
+
+connections %>% 
+  simpleNetwork(Source = "from_id", Target = "to_id")
+
+
+
+
+

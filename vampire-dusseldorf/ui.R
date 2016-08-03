@@ -21,14 +21,7 @@ body <-   dashboardBody(
     
     # OVERVIEW tab content
     tabItem(tabName = "tab_overview",
-            fluidRow(
-              box(plotOutput("distPlot", height = 250)),
-              
-              box(
-                title = "Controls",
-                sliderInput("bins", "Number of observations:", 1, 100, 50)
-              )
-            )
+            h2("overview tab content")
     ),
     
     # VAMPIRES tab content

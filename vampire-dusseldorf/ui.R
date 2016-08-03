@@ -8,14 +8,18 @@ sidebar <-   dashboardSidebar(
     menuItem("Vampires", tabName = "tab_vampires", icon = icon("sunglasses", lib = "glyphicon")),
     menuItem("Politics", tabName = "tab_politics", icon = icon("king", lib = "glyphicon")),
     menuItem("Domain", tabName = "tab_domain", icon = icon("map-o")),
-    menuItem("Raw data", tabName = "tab_data", icon = icon("database"))
+    menuItem("Raw data", icon = icon("database"),
+             menuSubItem("vampires", tabName = "tab_data1"),
+             menuSubItem("connections", tabName = "tab_data2")
+             )
   )
 )
 
 ## Body content
 body <-   dashboardBody(
   tabItems(
-    # First tab content
+    
+    # OVERVIEW tab content
     tabItem(tabName = "tab_overview",
             fluidRow(
               box(plotOutput("distPlot", height = 250)),
@@ -27,24 +31,29 @@ body <-   dashboardBody(
             )
     ),
     
-    # Second tab content
+    # VAMPIRES tab content
     tabItem(tabName = "tab_vampires",
             h2("vampires tab content")
     ), 
     
-    # third tab content
+    # POLITICS tab content
     tabItem(tabName = "tab_politics",
             h2("politics tab content")
     ),
     
-    # fourth tab content
+    # DOMAIN tab content
     tabItem(tabName = "tab_domain",
             h2("domain tab content")
     ),
     
-    # fifth tab content
-    tabItem(tabName = "tab_data",
-            h2("data tab content")
+    # DATA tab content
+    tabItem(tabName = "tab_data1",
+            h2("Vampires in Düsseldorf"),
+            dataTableOutput("DT_vampires")
+    ),
+    tabItem(tabName = "tab_data2",
+            h2("Connections between vampires"),
+            dataTableOutput("DT_connections")
     )
   )
 )

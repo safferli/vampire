@@ -19,5 +19,13 @@ shinyServer(function(input, output) {
     hist(x, breaks = bins, col = 'darkgray', border = 'white')
 
   })
+  
+  output$DT_vampires <- renderDataTable({
+    vampires
+  })
+  
+  output$DT_connections <- renderDataTable({
+    connections
+  })
 
 })

@@ -26,8 +26,19 @@ body <-   dashboardBody(
     
     # VAMPIRES tab content
     tabItem(tabName = "tab_vampires",
-            h2("vampires tab content")
-    ), 
+            fluidRow(
+              box(
+                title = "Vampire population census", 
+                status = "primary",
+                plotOutput("plot_clans"), 
+                width = 8
+              ),
+              box(
+                selectInput("i_clan", label = "x-axis is: ", choices = choices_i_clan, selected = "Clan"),
+                width = 2
+              )
+            )
+    ),
     
     # POLITICS tab content
     tabItem(tabName = "tab_politics",

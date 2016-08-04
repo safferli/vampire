@@ -1,29 +1,18 @@
 
-# This is the server logic for a Shiny web application.
-# You can find out more about building applications with Shiny here:
-#
-# http://shiny.rstudio.com
-#
-
-library(shiny)
-
 shinyServer(function(input, output) {
 
-  output$distPlot <- renderPlot({
-
-    # generate bins based on input$bins from ui.R
-    x    <- faithful[, 2]
-    bins <- seq(min(x), max(x), length.out = input$bins + 1)
-
-    # draw the histogram with the specified number of bins
-    hist(x, breaks = bins, col = 'darkgray', border = 'white')
-
+  ## VAMPIRES output
+  output$plot_clans <- renderPlot({
+    vampires %>% 
+      ggplot()+
+      geom_bar(aes(x=get(input$i_clan), fill = get(choices_i_clan[choices_i_clan != input$i_clan])))+
+      labs(x = paste("Vampire population census by", input$i_clan), fill = choices_i_clan[choices_i_clan != input$i_clan])
   })
   
+  ## RAW DATA output
   output$DT_vampires <- renderDataTable({
     vampires
   })
-  
   output$DT_connections <- renderDataTable({
     connections
   })

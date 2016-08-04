@@ -3,6 +3,7 @@ library(shinydashboard)
 library(googlesheets)
 library(dplyr)
 library(ggplot2)
+library(markdown)
 
 # https://docs.google.com/spreadsheets/d/1Gruo1DnElwTIAs42l-jK5JH5ckT_lKWR3goFx4W6XIs/pubhtml
 # register the "Vampire Düsseldorf" sheet

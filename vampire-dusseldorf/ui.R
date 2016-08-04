@@ -21,7 +21,8 @@ body <-   dashboardBody(
     
     # OVERVIEW tab content
     tabItem(tabName = "tab_overview",
-            h2("overview tab content")
+            h2("Introduction"),
+            box(includeMarkdown("titlepage.md"), width = 10)
     ),
     
     # VAMPIRES tab content

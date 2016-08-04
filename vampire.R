@@ -49,7 +49,8 @@ library(networkD3)
 connections %>% 
   simpleNetwork(Source = "from_id", Target = "to_id")
 
-
-
-
+# https://christophergandrud.github.io/networkD3/
+# https://github.com/christophergandrud/networkD3/blob/master/inst/examples/examples.R
+# http://igraph.org/r/
+# http://kateto.net/networks-r-igraph
 

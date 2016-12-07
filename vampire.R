@@ -105,3 +105,11 @@ forceNetwork(Links = gVamps, Nodes = nodeVamps,
 # http://kateto.net/networks-r-igraph
 # http://www.vesnam.com/Rblog/viznets6/
 
+
+# http://gis.stackexchange.com/questions/495/seeking-administrative-boundaries-for-various-countries
+# http://download.geofabrik.de/europe/germany/nordrhein-westfalen/duesseldorf-regbez.html
+# https://carlawestenberger.carto.com/tables/shapefile_nrw_gemeinden/public
+# https://blog.oraylis.de/2010/05/german-map-spatial-data-for-plz-postal-code-regions/
+# https://offenedaten.de/dataset?res_format=KMZ
+
+# https://github.com/timelyportfolio/d3r

@@ -60,3 +60,5 @@ connections %>%
 # https://carlawestenberger.carto.com/tables/shapefile_nrw_gemeinden/public
 # https://blog.oraylis.de/2010/05/german-map-spatial-data-for-plz-postal-code-regions/
 # https://offenedaten.de/dataset?res_format=KMZ
+
+# https://github.com/timelyportfolio/d3r

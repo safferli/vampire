@@ -44,13 +44,64 @@ vampires %>%
 
 ### network analysis
 
+library(igraph)
 library(networkD3)
 
-connections %>% 
-  simpleNetwork(Source = "from_id", Target = "to_id")
+# connections %>% 
+#   simpleNetwork(Source = "from_id", Target = "to_id")
+
+MisLinks <- MisLinks
+MisNodes <- tibble::as_tibble(MisNodes) %>% mutate(nameChr = as.character(name))
+
+forceNetwork(Links = MisLinks, Nodes = MisNodes,
+             Source = "source", Target = "target",
+             Value = "value", NodeID = "nameChr",
+             Group = "group",
+             zoom = TRUE)
+
+
+gVamps <- connections %>% 
+  # self-join bi-directional rows in reverse direction to get full directed network
+  dplyr::bind_rows(
+    connections %>% 
+      filter(bi_directional == 1) %>% 
+      mutate(
+        tmp_id = from_id,
+        from_id = to_id,
+        to_id = tmp_id
+      ) %>% 
+      select(-tmp_id)
+  ) %>% 
+  mutate(
+    from_id = from_id-1,
+    to_id = to_id-1
+  ) %>% 
+  #graph.data.frame(vertices = vampires %>% mutate(FullName = paste0(Firstname, "'", Nickname, "'", Lastname), id = Id-1)) %>% 
+  graph.data.frame() %>% 
+  simplify()
+
+nodeVamps <- vampires %>% 
+  mutate(
+    FullName = paste0(Firstname, "'", Nickname, "'", Lastname), 
+    id = Id-1
+  ) %>% 
+  select(
+    id, everything(), -Id
+  )
+
+
+
+forceNetwork(Links = gVamps, Nodes = nodeVamps,
+             Source = "from_id", Target = "to_id",
+             NodeID = "FullName", Group = "Covenant",
+             zoom = TRUE)
+
+
+
 
 # https://christophergandrud.github.io/networkD3/
 # https://github.com/christophergandrud/networkD3/blob/master/inst/examples/examples.R
 # http://igraph.org/r/
 # http://kateto.net/networks-r-igraph
+# http://www.vesnam.com/Rblog/viznets6/
 
